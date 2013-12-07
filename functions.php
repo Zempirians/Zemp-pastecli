@@ -1,4 +1,5 @@
 <?php
+include('config.php');
 ob_start();
 class config{
 
