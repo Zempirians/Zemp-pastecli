@@ -1,4 +1,8 @@
-	$host = 'localhost';
-	$user = 'root';
-	$pass = '';
-	$db = 'test';
+<?php
+
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'test';
+
+?>
