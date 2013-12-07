@@ -1,10 +1,7 @@
 <?php
 ob_start();
 class config{
-	private $host = 'localhost';
-	private $user = 'root';
-	private $pass = '';
-	private $db = 'test';
+
 
 	protected function con()
 	{
