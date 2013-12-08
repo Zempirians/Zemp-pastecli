@@ -25,7 +25,8 @@ class config{
 		}
 
 
-	}public function view($id){
+	}
+	public function view($id){
 
 		$b = $this->con();
 		$ex = $b->prepare("SELECT `date`,`paste` FROM pastes WHERE `id` = ?");
