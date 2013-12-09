@@ -1,19 +1,19 @@
 <?php
 include('config.php');
 ob_start();
-class config{
+
+class config
+{
 
 
 	protected function con()
 	{
-
 		$b = new PDO("mysql:host=$this->host;dbname=$this->db", $this->user, $this->pass);
 		return $b;
 	}
-	public function paste($paste,$ip){
 
-		if(!empty($paste)){
-			
+	public function paste($paste,$ip){
+		if(!empty($paste)){		
 			$b = $this->con();
 			$date=getdate();
 			$dte = $date["year"]. "-" . $date["mday"].'-'.$date["mon"] ;	
@@ -21,13 +21,11 @@ class config{
 			@$ex->execute(array($dte,$paste,$ip));
 			$id = $b->lastInsertId();
 			return $id;
-
 		}
-
-
 	}
-	public function view($id){
 
+	public function view($id)
+	{
 		$b = $this->con();
 		$ex = $b->prepare("SELECT `date`,`paste` FROM pastes WHERE `id` = ?");
 		@$ex->execute(array($id));
@@ -36,16 +34,4 @@ class config{
 		$res = array('date' => $rows[0]['date'],'paste' => $rows[0]['paste']);
 		return $res;
 	}
-
-
 }
-
-
-
-
-
-
-
-
-
-?>
